@@ -26,6 +26,10 @@ export class AddfriendComponent implements OnInit {
       (response)=>{
         console.log(response)
         alert("Successfully added")
+        this.name=""
+        this.friendName=""
+        this.friendNickName=""
+        this. DescribeYourFriend=""
 
       }
     )
