@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="conatiner">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+           <div *ngIf="status then showData else showLoadingScreen"></div>
+           <ng-template #showData>
+            <table class="table table-info table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Friend Name</th>
+                  <th scope="col">Friend Nickname</th>
+                  <th scope="col">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let i of frdsData">
+                  <td>{{i._id}}</td>
+                  <td>{{i.name}}</td>
+                  <td>{{i.friendName}}</td>
+                  <td>{{i.friendNickName}}</td>
+                  <td>{{i.DescribeYourFriend}}</td>
+                 
+                </tr>
+               
+              </tbody>
+
+        </table>
+           </ng-template>
+           <ng-template #showLoadingScreen>
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+           </ng-template>
+        </div>
+    </div>
+</div>
